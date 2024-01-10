@@ -44,18 +44,200 @@ body {
   background-color: #f7f7f7;
   color: #010101;
 }
-
-h1 {
-  font-size: 2rem;
+@media (max-width: 767px) {
+  h1 {
+    font-size: 5rem;
+    
+  }
+  .green h2 {
+    font-size: 1.5rem;
+  }
   
+  h2 {
+    font-size: 5rem;
+  
+  }
+  h3 {
+    font-size: 1.5rem;
+  
+}
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 8rem;
+    
+  }
+  .green h2 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 8rem;
+  
+  }
+  h3 {
+    font-size: 2rem;
+  
+}
 }
 // h2:before {
 //   content: attr(data-stroke);
 // }
 .thick-outline {
   color: #000;
-  text-shadow: 0.0px 10.0px 0.02px #fff, 9.8px 2.1px 0.02px #fff, 4.2px -9.1px 0.02px #fff, -8.0px -6.0px 0.02px #fff, -7.6px 6.5px 0.02px #fff, 4.8px 8.8px 0.02px #fff, 9.6px -2.8px 0.02px #fff, -0.7px -10.0px 0.02px #fff, -9.9px -1.5px 0.02px #fff, -3.5px 9.4px 0.02px #fff, 8.4px 5.4px 0.02px #fff, 7.1px -7.0px 0.02px #fff, -5.4px -8.4px 0.02px #fff, -9.4px 3.5px 0.02px #fff, 1.4px 9.9px 0.02px #fff, 10.0px 0.8px 0.02px #fff, 2.9px -9.6px 0.02px #fff, -8.7px -4.8px 0.02px #fff, -6.6px 7.5px 0.02px #fff, 5.9px 8.0px 0.02px #fff, 9.1px -4.1px 0.02px #fff, -2.1px -9.8px 0.02px #fff, -10.0px -0.1px 0.02px #fff, -2.2px 9.8px 0.02px #fff, 9.1px 4.2px 0.02px #fff, 6.1px -8.0px 0.02px #fff, -6.5px -7.6px 0.02px #fff, -8.8px 4.7px 0.02px #fff, 2.7px 9.6px 0.02px #fff, 10.0px -0.6px 0.02px #fff, 1.5px -9.9px 0.02px #fff, -9.3px -3.6px 0.02px #fff, -5.5px 8.4px 0.02px #fff, 7.0px 7.2px 0.02px #fff, 8.5px -5.3px 0.02px #fff, -3.4px -9.4px 0.02px #fff, -9.9px 1.3px 0.02px #fff, -0.8px 10.0px 0.02px #fff, 9.6px 2.9px 0.02px #fff, 4.9px -8.7px 0.02px #fff, -7.5px -6.7px 0.02px #fff, -8.1px 5.9px 0.02px #fff, 4.0px 9.2px 0.02px #fff, 9.8px -2.0px 0.02px #fff, 0.2px -10.0px 0.02px #fff, -9.7px -2.3px 0.02px #fff, -4.3px 9.0px 0.02px #fff, 7.9px 6.1px 0.02px #fff
+  /*doubled-text-shadow: 
+  0.0px 20.0px 0.04px #fff, 
+  19.6px 4.2px 0.04px #fff, 
+  8.4px -18.2px 0.04px #fff, 
+  -16.0px -12.0px 0.04px #fff, 
+  -15.2px 13px 0.04px #fff, 
+  9.6px 17.6px 0.04px #fff, 
+  18.6px -5.6px 0.04px #fff, 
+  -1.4px -20.0px 0.04px #fff, 
+  -19.8px -3px 0.04px #fff, 
+  -7px 18.8px 0.04px #fff, 
+  16.8px 10.8px 0.04px #fff, 
+  14.2px -14.0px 0.4px #fff, 
+  -10.8px -16.8px 0.04px #fff, 
+  -18.8px 7px 0.04px #fff, 
+  2.8px 19.8px 0.04px #fff, 
+  20.0px 1.6px 0.04px #fff, 
+  5.8px -19.2px 0.04px #fff, 
+  -17.4px -9.6px 0.04px #fff, 
+  -13.2px 15px 0.04px #fff, 
+  11.8px 16.0px 0.04px #fff, 
+  18.2px -8.2px 0.04px #fff, 
+  -4.2px -19.6px 0.04px #fff, 
+  -20.0px -0.2px 0.04px #fff, 
+  -4.4px 19.6px 0.04px #fff, 
+  18.2px 8.4px 0.04px #fff, 
+  12.2px -16.0px 0.04px #fff, 
+  -13px -15.2px 0.04px #fff, 
+  -17.6px 9.4px 0.04px #fff, 
+  5.4px 19.2px 0.04px #fff, 
+  20.0px -1.2px 0.04px #fff, 
+  31.5px -18.8px 0.04px #fff, 
+  -18.6px -7.2px 0.04px #fff, 
+  -11px 16.8px 0.04px #fff, 
+  14.0px 14.4px 0.04px #fff, 
+  17px -10.6px 0.04px #fff, 
+  -6.8px -18.8px 0.04px #fff, 
+  -19.8px 2.6px 0.04px #fff, 
+  -1.6px 20.0px 0.04px #fff, 
+  19.2px 5.8px 0.04px #fff, 
+  9.8px -17.4px 0.04px #fff, 
+  -15px -13.4px 0.04px #fff, 
+  -16.2px 11.8px 0.04px #fff, 
+  8.0px 18.4px 0.04px #fff, 
+  19.6px -4.0px 0.04px #fff, 
+  0.4px -20.0px 0.04x #fff, 
+  -18.4px -4.6px 0.04px #fff, 
+  -8.6px 18.0px 0.04px #fff, 
+  15.8px 12.2px 0.04px #fff*/
+
+  text-shadow: 
+  0.0px 10.0px 0.02px #fff, 
+  9.8px 2.1px 0.02px #fff, 
+  4.2px -9.1px 0.02px #fff, 
+  -8.0px -6.0px 0.02px #fff, 
+  -7.6px 6.5px 0.02px #fff, 
+  4.8px 8.8px 0.02px #fff, 
+  9.6px -2.8px 0.02px #fff, 
+  -0.7px -10.0px 0.02px #fff, 
+  -9.9px -1.5px 0.02px #fff, 
+  -3.5px 9.4px 0.02px #fff, 
+  8.4px 5.4px 0.02px #fff, 
+  7.1px -7.0px 0.02px #fff, 
+  -5.4px -8.4px 0.02px #fff, 
+  -9.4px 3.5px 0.02px #fff, 
+  1.4px 9.9px 0.02px #fff, 
+  10.0px 0.8px 0.02px #fff, 
+  2.9px -9.6px 0.02px #fff, 
+  -8.7px -4.8px 0.02px #fff, 
+  -6.6px 7.5px 0.02px #fff, 
+  5.9px 8.0px 0.02px #fff, 
+  9.1px -4.1px 0.02px #fff, 
+  -2.1px -9.8px 0.02px #fff,
+   -10.0px -0.1px 0.02px #fff, 
+   -2.2px 9.8px 0.02px #fff, 
+   9.1px 4.2px 0.02px #fff, 
+   6.1px -8.0px 0.02px #fff, 
+   -6.5px -7.6px 0.02px #fff, 
+   -8.8px 4.7px 0.02px #fff, 
+   2.7px 9.6px 0.02px #fff, 
+   10.0px -0.6px 0.02px #fff, 
+   1.5px -9.9px 0.02px #fff, 
+   -9.3px -3.6px 0.02px #fff, 
+   -5.5px 8.4px 0.02px #fff, 
+   7.0px 7.2px 0.02px #fff, 
+   8.5px -5.3px 0.02px #fff, 
+   -3.4px -9.4px 0.02px #fff, 
+   -9.9px 1.3px 0.02px #fff, 
+   -0.8px 10.0px 0.02px #fff, 
+   9.6px 2.9px 0.02px #fff, 
+   4.9px -8.7px 0.02px #fff, 
+   -7.5px -6.7px 0.02px #fff, 
+   -8.1px 5.9px 0.02px #fff, 
+   4.0px 9.2px 0.02px #fff, 
+   9.8px -2.0px 0.02px #fff, 
+   0.2px -10.0px 0.02px #fff, 
+   -9.7px -2.3px 0.02px #fff, 
+   -4.3px 9.0px 0.02px #fff, 
+   7.9px 6.1px 0.02px #fff
 }
+// .thick-black-outline {
+//   // color: #fff;
+
+//   text-shadow: 
+//   0.0px 10.0px 0.02px #000, 
+//   9.8px 2.1px 0.02px #000, 
+//   4.2px -9.1px 0.02px #000, 
+//   -8.0px -6.0px 0.02px #000, 
+//   -7.6px 6.5px 0.02px #000, 
+//   4.8px 8.8px 0.02px #000, 
+//   9.6px -2.8px 0.02px #000, 
+//   -0.7px -10.0px 0.02px #000, 
+//   -9.9px -1.5px 0.02px #000, 
+//   -3.5px 9.4px 0.02px #000, 
+//   8.4px 5.4px 0.02px #000, 
+//   7.1px -7.0px 0.02px #000, 
+//   -5.4px -8.4px 0.02px #000, 
+//   -9.4px 3.5px 0.02px #000, 
+//   1.4px 9.9px 0.02px #000, 
+//   10.0px 0.8px 0.02px #000, 
+//   2.9px -9.6px 0.02px #000, 
+//   -8.7px -4.8px 0.02px #000, 
+//   -6.6px 7.5px 0.02px #000, 
+//   5.9px 8.0px 0.02px #000, 
+//   9.1px -4.1px 0.02px #000, 
+//   -2.1px -9.8px 0.02px #000,
+//    -10.0px -0.1px 0.02px #000, 
+//    -2.2px 9.8px 0.02px #000, 
+//    9.1px 4.2px 0.02px #000, 
+//    6.1px -8.0px 0.02px #000, 
+//    -6.5px -7.6px 0.02px #000, 
+//    -8.8px 4.7px 0.02px #000, 
+//    2.7px 9.6px 0.02px #000, 
+//    10.0px -0.6px 0.02px #000, 
+//    1.5px -9.9px 0.02px #000, 
+//    -9.3px -3.6px 0.02px #000, 
+//    -5.5px 8.4px 0.02px #000, 
+//    7.0px 7.2px 0.02px #000, 
+//    8.5px -5.3px 0.02px #000, 
+//    -3.4px -9.4px 0.02px #000, 
+//    -9.9px 1.3px 0.02px #000, 
+//    -0.8px 10.0px 0.02px #000, 
+//    9.6px 2.9px 0.02px #000, 
+//    4.9px -8.7px 0.02px #000, 
+//    -7.5px -6.7px 0.02px #000, 
+//    -8.1px 5.9px 0.02px #000, 
+//    4.0px 9.2px 0.02px #000, 
+//    9.8px -2.0px 0.02px #000, 
+//    0.2px -10.0px 0.02px #000, 
+//    -9.7px -2.3px 0.02px #000, 
+//    -4.3px 9.0px 0.02px #000, 
+//    7.9px 6.1px 0.02px #000
+// }
 p {
   width: 90%;
   margin: 2rem 0;
@@ -82,12 +264,31 @@ p {
   align-items: flex-end;
 }
 @media (max-width: 768px) {
+  // .horizontal_scroll {
+  //   width: 650vw;
+  // }
+  // .scroll_contents:first-child {
+  //   height: 100%;
+  //   width: 100vw;
+  // }
+  // .scroll_contents:nth-child(2n) {
+  //   height: 100%;
+  //   width: 250vw;
+  // }
+  // .scroll_contents:nth-child(3n) {
+  //   height: 100%;
+  //   width: 200vw;
+  // }
+  // .scroll_contents:last-child {
+  //   height: 100%;
+  //   width: 100vw;
+  // }
   .nav {
-    border: 2px solid black;
+    border: 5px solid black;
   }
   .nav-col a img {
     max-width: 81vw;
-    margin: -2px -2px -7px -2px;
+    margin: -2px -2px -8px -2px;
   }
   .nav-col:first-child {
     width: 50%;
@@ -106,7 +307,17 @@ p {
     margin-top: 15px;
    }
 }
+.horizontal_scroll {
+  width: 400vw;
+}
 @media (min-width: 768px) {
+  // .horizontal_scroll {
+  //   width: 400vw;
+  // }
+  .scroll_contents {
+    height: 100%;
+    width: 100vw;
+  }
   .nav {
     padding: 24px 28px;
   }
@@ -127,6 +338,13 @@ p {
    }
    
 }
+
+@media (min-width: 850px) and (max-width: 1200px ) {
+  
+  .scroll_inner_wrapper {
+    width: 80%
+  }
+}
 section {
   height: 100vh;
 }
@@ -144,15 +362,9 @@ section {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 400vw;
   will-change: transform;
   display: flex;
   justify-content: space-between;
-}
-
-.scroll_contents {
-  height: 100%;
-  width: 100vw;
 }
 
 
@@ -206,14 +418,11 @@ section {
     background-color: #2b93d1;
   }
   .white {
-    background: linear-gradient(180deg, rgba(43,147,209,1) 25%, rgb(247,247,247,1) 100%);
+    background: linear-gradient(180deg, rgba(43,147,209,1) 20%, rgb(247,247,247,1) 60%);
   }
 }
 
-h2 {
-  font-size: 2rem;
 
-}
 
 .left {
   margin-top: 5vh;

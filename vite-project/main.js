@@ -46,7 +46,7 @@ function transform(section) {
   
   //move horizontally depending on vertical scroll depth
   scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
-  console.log(percentage)
+  
   
   // document.querySelector(".insta").style.animation = "rainbow01 20s 1";
   // document.querySelector(".email").style.animation = "rainbow02 20s 1";
@@ -66,6 +66,7 @@ function transform(section) {
       svg.style.fill = "#edaac6"
     } else if (percentage >= 200 && percentage <= 300) {
       svg.style.fill = "#ffd800"
+      document.querySelector(".nav").style.backgroundColor= "#2b93d1";
     } 
     svg.style.transform ="ease"
   })
