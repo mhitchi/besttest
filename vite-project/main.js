@@ -84,3 +84,12 @@ window.addEventListener('scrollend', (e) => {
 })
 
 
+const colorTxt = [...document.querySelectorAll('.color-text')]
+const colorArr = ["#009c73", "#2b93d1", "#ffd800", "#e65925","#edaac6"]
+
+
+for (let i = 0; i< colorTxt.length; i++) {
+  var rand = colorArr[(Math.random() * colorArr.length) | 0]
+  colorTxt[i].style.color = rand
+}
+
