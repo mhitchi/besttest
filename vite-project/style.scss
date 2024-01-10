@@ -64,6 +64,10 @@ p {
   z-index: 99;
 }
 
+// .nav-col {
+//   width: 20%
+// }
+
 section {
   height: 100vh;
 }
@@ -137,50 +141,106 @@ h2 {
   margin-top: 85vh;
   margin-right: 5vw;
 }
-
-@keyframes rainbow01 {
+@keyframes toorange{
   0% {
-    fill: #ffd800
+    fill: #000
   }
-  25% {
-    fill: #2b93d1
+  100% {
+    fill: #e65925;
   }
-  50% {
-    fill: #edaac6
-  }
-  75% {
+}
+@keyframes topink{
+  0% {
     fill: #e65925
   }
   100% {
-    fill: #009c73
+    fill: #edaac6;
   }
 }
-@keyframes rainbow02 {
+@keyframes toyellow{
   0% {
-    fill: #edaac6 
-  }
-  25% {
-    fill: #009c73
-  }
-  50% {
-    fill: #e65925
-  }
-  75% {
-    fill: #ffd800
+    fill: #edaac6;
   }
   100% {
-    fill: #2b93d1
+    fill: #ffd800
+  }
+}
+@keyframes toblack{
+  0% {
+    fill: #ffd800;
+  }
+  100% {
+    fill: #000
   }
 }
 
-// @media (prefers-reduced-motion: no-preference) {
-//   .insta.icon {
-//     animation: rainbow01 12s infinite;
-//     transition: ease;
+// @keyframes rainbow01 {
+//   0% {
+//     fill: #ffd800
 //   }
-  
-//   .email.icon {
-//     animation: rainbow02 12s infinite;
-//     transition: ease;
+//   12% {
+//     fill: #2b93d1
 //   }
+//   25% {
+//     fill: #edaac6
+//   }
+//   35% {
+//     fill: #e65925
+//   }
+//   50% {
+//     fill: #009c73
+//   }
+//   65% {
+//     fill: #e65925
+//   }
+//   75% {
+//     fill: #edaac6
+//   }
+//   85% {
+//     fill: #2b93d1
+//   }
+//   100% {
+//     fill: #ffd800
+//   }
+// }
+// @keyframes rainbow02 {
+//   0% {
+//     fill: #edaac6 
+//   }
+//   15% {
+//     fill: #009c73
+//   }
+//   25% {
+//     fill: #e65925
+//   }
+//   35% {
+//     fill: #ffd800
+//   }
+//   50% {
+//     fill: #2b93d1
+//   }
+//   65% {
+//     fill: #ffd800
+//   }
+//   75% {
+//     fill: #e65925
+//   }
+//   85% {
+//     fill: #009c73
+//   }
+//   100% {
+//     fill: #edaac6 
+//   }
+// }
+// .running {
+//   -webkit-animation-play-state:running;
+//   -moz-animation-play-state:running;
+//   -o-animation-play-state:running; 
+//   animation-play-state:running;
+// }
+// .paused{
+//   -webkit-animation-play-state:paused;
+//   -moz-animation-play-state:paused;
+//   -o-animation-play-state:paused; 
+//   animation-play-state:paused;
 // }
