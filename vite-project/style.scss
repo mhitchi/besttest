@@ -59,7 +59,7 @@ p {
   right: 0;
   padding: 24px 28px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   z-index: 99;
 }
@@ -67,6 +67,16 @@ p {
 // .nav-col {
 //   width: 20%
 // }
+.nav-col a img {
+  max-width: 300px
+}
+.nav-col:first-child {
+  width: 50%;
+}
+.nav-col:last-child {
+  // width: 10%;
+  align-items: flex-end;
+}
 
 section {
   height: 100vh;
