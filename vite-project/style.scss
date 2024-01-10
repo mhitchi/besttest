@@ -51,6 +51,19 @@ p {
   margin: 2rem 0;
 }
 
+.nav {
+  position: fixed;
+  width: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 99;
+}
+
 section {
   height: 100vh;
 }
@@ -61,6 +74,7 @@ section {
 
 .scroll_container {
   height: 400vh;
+
 }
 
 .horizontal_scroll {
@@ -85,20 +99,27 @@ section {
   height: 100vh;
 }
 
-.red {
-  background-color: #ff3d00;
+
+.green {
+  // background-color: #009c73
+  background: linear-gradient(90deg, rgba(0,156,115,1) 75%, rgba(255,216,0,1) 100%);
 }
 
 .yellow {
-  background-color: #ffff00;
+  //background-color: #ffd800;
+  background: linear-gradient(90deg, rgba(255,216,0,1) 75%, rgba(230,89,37,1) 100%);
 }
 
-.green {
-  background-color: #05ff00;
+.orange {
+  //background-color: #e65925;
+  background: linear-gradient(90deg, rgba(230,89,37,1) 75%, rgba(43,147,209,1) 100%);
 }
 
 .blue {
-  background-color: #2835f8;
+  background-color: #2b93d1;
+}
+.white {
+  background: linear-gradient(180deg, rgba(43,147,209,1) 25%, rgb(247,247,247,1) 100%);
 }
 
 h2 {
@@ -116,3 +137,50 @@ h2 {
   margin-top: 85vh;
   margin-right: 5vw;
 }
+
+@keyframes rainbow01 {
+  0% {
+    fill: #ffd800
+  }
+  25% {
+    fill: #2b93d1
+  }
+  50% {
+    fill: #edaac6
+  }
+  75% {
+    fill: #e65925
+  }
+  100% {
+    fill: #009c73
+  }
+}
+@keyframes rainbow02 {
+  0% {
+    fill: #edaac6 
+  }
+  25% {
+    fill: #009c73
+  }
+  50% {
+    fill: #e65925
+  }
+  75% {
+    fill: #ffd800
+  }
+  100% {
+    fill: #2b93d1
+  }
+}
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .insta.icon {
+//     animation: rainbow01 12s infinite;
+//     transition: ease;
+//   }
+  
+//   .email.icon {
+//     animation: rainbow02 12s infinite;
+//     transition: ease;
+//   }
+// }
