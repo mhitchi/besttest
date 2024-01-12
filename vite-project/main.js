@@ -28,6 +28,7 @@ scrollContents.forEach(section => {
 
 //orange pink yellow black
 window.addEventListener('scroll', (e) => {
+  console.log("scrolling")
   //create loop to apply transform to all sticky sections
   for(let i = 0; i < stickySections.length; i++){
     transform(stickySections[i])
@@ -70,8 +71,13 @@ function transform(section) {
       navColor.style.backgroundColor = "rgb(43,147,209,0)"
     } else if (percentage >= 200 && percentage <= 300) {
       svg.style.fill = "#ffd800";
-      navColor.style.backgroundColor = "rgb(43,147,209,1)"
+      
     } 
+    if (percentage >=290 && percentage <=300) {
+      navColor.style.backgroundColor = "rgb(43,147,209,1)"
+    } else if (percentage < 290) {
+      navColor.style.backgroundColor = "rgb(43,147,209,0)"
+    }
     svg.style.transform ="ease"
   })
 
@@ -97,4 +103,12 @@ for (let i = 0; i< colorTxt.length; i++) {
   var rand = colorArr[(Math.random() * colorArr.length) | 0]
   colorTxt[i].style.color = rand
 }
+
+
+//scrolltrigger
+//add event listener for scroll
+//document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight))
+//set position var
+//add click handler to go to set position 0,0
+//add animation to speed up while scrolling
 

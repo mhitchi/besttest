@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "gsap": "^3.12.4",
     "react-router-dom": "^6.21.2",
+    "scrolltrigger": "^1.0.1",
+    "three": "^0.160.0",
+    "three.js": "^0.77.1",
     "vite": "^5.0.11"
   }
 }
