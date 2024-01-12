@@ -58,15 +58,19 @@ function transform(section) {
     //   svg.classList.remove = "paused";
     //   svg.classList.add = "running";
     // }
+    const navColor = document.querySelector(".nav")
     if (percentage < 10 ) {
-      svg.style.fill = "#000"
+      svg.style.fill = "#000";
+      navColor.style.backgroundColor = "rgb(43,147,209,0)"
     } else if (percentage >= 10 && percentage < 100) {
-      svg.style.fill = "#e65925"
+      svg.style.fill = "#e65925";
+      navColor.style.backgroundColor = "rgb(43,147,209,0)"
     } else if (percentage >= 100 && percentage < 200) {
-      svg.style.fill = "#edaac6"
+      svg.style.fill = "#edaac6";
+      navColor.style.backgroundColor = "rgb(43,147,209,0)"
     } else if (percentage >= 200 && percentage <= 300) {
-      svg.style.fill = "#ffd800"
-      document.querySelector(".nav").style.backgroundColor= "#2b93d1";
+      svg.style.fill = "#ffd800";
+      navColor.style.backgroundColor = "rgb(43,147,209,1)"
     } 
     svg.style.transform ="ease"
   })
