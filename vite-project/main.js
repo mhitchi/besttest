@@ -102,13 +102,24 @@ function transform(section) {
   //   console.log(svgArr[i].style.fill)
   // }
 }
+//spin faster if scrolling
+window.addEventListener('scroll', (e) => {
+  // document.querySelector(".cube-spinner").classList.add("spincube")
+  document.querySelector(".cube-spinner").style.animationName = "spincube"
+  // document.querySelector(".cube-spinner").style.animationDuration = "6s"
+  // document.querySelector(".cube-spinner").style.animationPlayState = "paused"
+  
+  console.log("scrolling")
 
+})
 //stop if not scrolling
 window.addEventListener('scrollend', (e) => {
-  document.querySelectorAll(".icon").forEach (svg => {
-    svg.classList.add = "paused"; 
-    svg.classList.remove = "running";
-  })
+  console.log("end scroll")
+  //document.querySelector(".cube-spinner").classList.remove("spincube")
+  document.querySelector(".cube-spinner").style.animationName = null
+  //document.querySelector(".cube-spinner").style.animationDuration = "12s"
+  // document.querySelector(".cube-spinner").style.animationPlayState = "running"
+
 })
 
 
@@ -131,23 +142,23 @@ for (let i = 0; i< colorTxt.length; i++) {
 //when enter .green.orange.yellow.blue, set animation-duration: 6s;
 
 
-ScrollTrigger.create({
-  trigger: ".green",
-  start: "top top",
-  endTrigger: ".yellow",
-  end: "bottom 50%+=100px",
-  onToggle: (self) => {
-    console.log("toggled, isActive:", self.isActive),
-    document.querySelector(".cube-spinner").style.animationDuration = "6s"
-  },
-  onUpdate: (self) => {
-    console.log(
-      "progress:",
-      self.progress.toFixed(3),
-      "direction:",
-      self.direction,
-      "velocity",
-      self.getVelocity()
-    );
-  },
-});
+// ScrollTrigger.create({
+//   trigger: ".green",
+//   start: "top top",
+//   endTrigger: ".yellow",
+//   end: "bottom 50%+=100px",
+//   onToggle: (self) => {
+//     console.log("toggled, isActive:", self.isActive),
+//     document.querySelector(".cube-spinner").style.animationDuration = "6s"
+//   },
+//   onUpdate: (self) => {
+//     console.log(
+//       "progress:",
+//       self.progress.toFixed(3),
+//       "direction:",
+//       self.direction,
+//       "velocity",
+//       self.getVelocity()
+//     );
+//   },
+// });
