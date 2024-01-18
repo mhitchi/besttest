@@ -60,7 +60,7 @@ const controls = new OrbitControls( camera, renderer.domElement)
 // Array(200).fill().forEach(addStar);
 
 scene.fog = new THREE.FogExp2( 0x00a9b2, 0.009 );
-scene.background = null
+scene.background = null;
 
 
 //move camera

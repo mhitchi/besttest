@@ -1,3 +1,14 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
+
+import "./animate.scss";
+import * as THREE from "three";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
 
 const stickySections = [...document.querySelectorAll('.sticky_wrap')]
 
@@ -26,9 +37,15 @@ scrollContents.forEach(section => {
   observer.observe(section);
 })
 
+
 //orange pink yellow black
 window.addEventListener('scroll', (e) => {
-  console.log("scrolling")
+  // document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+  // console.log("scrolling")
+  const el = document.querySelector("#spinCube");
+  gsap.fromTo(el, { rotation: 0 }, { rotation: 0, duration: 10, scrollTrigger: {
+      trigger: el
+  } })
   //create loop to apply transform to all sticky sections
   for(let i = 0; i < stickySections.length; i++){
     transform(stickySections[i])
@@ -111,4 +128,26 @@ for (let i = 0; i< colorTxt.length; i++) {
 //set position var
 //add click handler to go to set position 0,0
 //add animation to speed up while scrolling
+//when enter .green.orange.yellow.blue, set animation-duration: 6s;
 
+
+ScrollTrigger.create({
+  trigger: ".green",
+  start: "top top",
+  endTrigger: ".yellow",
+  end: "bottom 50%+=100px",
+  onToggle: (self) => {
+    console.log("toggled, isActive:", self.isActive),
+    document.querySelector(".cube-spinner").style.animationDuration = "6s"
+  },
+  onUpdate: (self) => {
+    console.log(
+      "progress:",
+      self.progress.toFixed(3),
+      "direction:",
+      self.direction,
+      "velocity",
+      self.getVelocity()
+    );
+  },
+});
