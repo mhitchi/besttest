@@ -7,45 +7,19 @@ import * as THREE from "three";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
-
 const stickySections = [...document.querySelectorAll('.sticky_wrap')]
-
 const scrollContents = [...document.querySelectorAll('.scroll_contents')]
 
-const observer = new IntersectionObserver(entries => {
-  // Loop over the entries
-  entries.forEach(entry => {
-    // If the element is visible
-    if (entry.isIntersecting) {
-      // Add the animation class
-      entry.target.classList.add('animation');
-
-
-    } else {
-      if (entry.target.classList.contains('animation')) {
-        entry.target.classList.remove('animation');
-      }
-    }
-  });
-
- 
-});
-
-scrollContents.forEach(section => {
-  observer.observe(section);
-})
 
 
 //orange pink yellow black
 window.addEventListener('scroll', (e) => {
   // document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
   // console.log("scrolling")
-  const el = document.querySelector("#spinCube");
-  gsap.fromTo(el, { rotation: 0 }, { rotation: 0, duration: 10, scrollTrigger: {
-      trigger: el
-  } })
+  // const el = document.querySelector("#spinCube");
+  // gsap.fromTo(el, { rotation: 0 }, { rotation: 0, duration: 10, scrollTrigger: {
+  //     trigger: el
+  // } })
   //create loop to apply transform to all sticky sections
   for(let i = 0; i < stickySections.length; i++){
     transform(stickySections[i])
@@ -61,9 +35,12 @@ function transform(section) {
   let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
 
   percentage = percentage < 0 ? 0 : percentage > 300 ? 300 : percentage;
+  // note: 130-210 = scenario/orange
+  // console.log(percentage)
   
   //move horizontally depending on vertical scroll depth
   scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+  scrollSection.style.webkitTransform = `-webkit-translate3d(${-(percentage)}vw, 0, 0); `
   
   
   // document.querySelector(".insta").style.animation = "rainbow01 20s 1";
@@ -109,18 +86,19 @@ window.addEventListener('scroll', (e) => {
   // document.querySelector(".cube-spinner").style.animationDuration = "6s"
   // document.querySelector(".cube-spinner").style.animationPlayState = "paused"
   
-  console.log("scrolling")
+  // console.log("scrolling")
 
 })
-//stop if not scrolling
-window.addEventListener('scrollend', (e) => {
-  console.log("end scroll")
-  //document.querySelector(".cube-spinner").classList.remove("spincube")
-  document.querySelector(".cube-spinner").style.animationName = null
-  //document.querySelector(".cube-spinner").style.animationDuration = "12s"
-  // document.querySelector(".cube-spinner").style.animationPlayState = "running"
+// // needed for safari and firefox
+// //stop if not scrolling
+// window.addEventListener('scrollend', (e) => {
+//   console.log("end scroll")
+//   //document.querySelector(".cube-spinner").classList.remove("spincube")
+//   document.querySelector(".cube-spinner").style.animationName = null
+//   //document.querySelector(".cube-spinner").style.animationDuration = "12s"
+//   // document.querySelector(".cube-spinner").style.animationPlayState = "running"
 
-})
+// })
 
 
 const colorTxt = [...document.querySelectorAll('.color-text')]

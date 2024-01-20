@@ -104,7 +104,8 @@ body {
   top: 5%;
   padding-top: 18%;
   margin: auto;
-
+  // testing scroll timeline
+  scroll-timeline-name: scroll()
 }
 
 .cube-spinner {
@@ -112,7 +113,11 @@ body {
 animation-delay: calc(var(--scroll) * 0.5s);
   animation-timing-function: ease-out;
   // animation-iteration-count: 1;
-  animation-duration: 1s;
+  // // animation duration needed for firefox and safari
+  // animation-duration: 1s;
+  animation-direction: alternate;
+  // testing scroll timeline
+  animation-timeline: scroll();
   transform-style: preserve-3d;
   transform-origin : 2.5vw 2.5vw 0;
   margin-left: calc(50% - 2.5vw);
@@ -214,3 +219,9 @@ animation-delay: calc(var(--scroll) * 0.5s);
 }
 
 /*end spincube*/
+
+
+/* start wheel */
+
+
+/* end wheel */

@@ -307,9 +307,9 @@ p {
     margin-top: 15px;
    }
 }
-.horizontal_scroll {
-  width: 400vw;
-}
+// .horizontal_scroll {
+//   width: 400vw;
+// }
 @media (min-width: 768px) {
   // .horizontal_scroll {
   //   width: 400vw;
@@ -318,6 +318,7 @@ p {
     height: 100%;
     width: 100vw;
   }
+
   .nav {
     padding: 24px 28px;
   }
@@ -364,12 +365,14 @@ section {
   height: 100%;
   will-change: transform;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
 
 .sticky_wrap {
   overflow: hidden;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 100vh;
