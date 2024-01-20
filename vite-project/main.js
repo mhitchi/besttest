@@ -11,15 +11,7 @@ const stickySections = [...document.querySelectorAll('.sticky_wrap')]
 const scrollContents = [...document.querySelectorAll('.scroll_contents')]
 
 
-
-//orange pink yellow black
 window.addEventListener('scroll', (e) => {
-  // document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-  // console.log("scrolling")
-  // const el = document.querySelector("#spinCube");
-  // gsap.fromTo(el, { rotation: 0 }, { rotation: 0, duration: 10, scrollTrigger: {
-  //     trigger: el
-  // } })
   //create loop to apply transform to all sticky sections
   for(let i = 0; i < stickySections.length; i++){
     transform(stickySections[i])
@@ -36,23 +28,16 @@ function transform(section) {
 
   percentage = percentage < 0 ? 0 : percentage > 300 ? 300 : percentage;
   // note: 130-210 = scenario/orange
-  // console.log(percentage)
+  console.log(percentage)
   
   //move horizontally depending on vertical scroll depth
   scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
   scrollSection.style.webkitTransform = `-webkit-translate3d(${-(percentage)}vw, 0, 0); `
   
-  
-  // document.querySelector(".insta").style.animation = "rainbow01 20s 1";
-  // document.querySelector(".email").style.animation = "rainbow02 20s 1";
+
   // //change svg color
-  
   document.querySelectorAll(".icon").forEach (svg => {
-    // console.log(svg)
-    // if(svg.classList.contains("paused")) {
-    //   svg.classList.remove = "paused";
-    //   svg.classList.add = "running";
-    // }
+
     const navColor = document.querySelector(".nav")
     if (percentage < 10 ) {
       svg.style.fill = "#000";
@@ -75,31 +60,14 @@ function transform(section) {
     svg.style.transform ="ease"
   })
 
-  // for(let i = 0; i>svgArr.length; i++) {
-  //   console.log(svgArr[i].style.fill)
-  // }
 }
+
 //spin faster if scrolling
 window.addEventListener('scroll', (e) => {
-  // document.querySelector(".cube-spinner").classList.add("spincube")
   document.querySelector(".cube-spinner").style.animationName = "spincube"
-  // document.querySelector(".cube-spinner").style.animationDuration = "6s"
-  // document.querySelector(".cube-spinner").style.animationPlayState = "paused"
-  
   // console.log("scrolling")
 
 })
-// // needed for safari and firefox
-// //stop if not scrolling
-// window.addEventListener('scrollend', (e) => {
-//   console.log("end scroll")
-//   //document.querySelector(".cube-spinner").classList.remove("spincube")
-//   document.querySelector(".cube-spinner").style.animationName = null
-//   //document.querySelector(".cube-spinner").style.animationDuration = "12s"
-//   // document.querySelector(".cube-spinner").style.animationPlayState = "running"
-
-// })
-
 
 const colorTxt = [...document.querySelectorAll('.color-text')]
 const colorArr = ["#009c73", "#2b93d1", "#ffd800", "#e65925","#edaac6"]
@@ -110,33 +78,3 @@ for (let i = 0; i< colorTxt.length; i++) {
   colorTxt[i].style.color = rand
 }
 
-
-//scrolltrigger
-//add event listener for scroll
-//document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight))
-//set position var
-//add click handler to go to set position 0,0
-//add animation to speed up while scrolling
-//when enter .green.orange.yellow.blue, set animation-duration: 6s;
-
-
-// ScrollTrigger.create({
-//   trigger: ".green",
-//   start: "top top",
-//   endTrigger: ".yellow",
-//   end: "bottom 50%+=100px",
-//   onToggle: (self) => {
-//     console.log("toggled, isActive:", self.isActive),
-//     document.querySelector(".cube-spinner").style.animationDuration = "6s"
-//   },
-//   onUpdate: (self) => {
-//     console.log(
-//       "progress:",
-//       self.progress.toFixed(3),
-//       "direction:",
-//       self.direction,
-//       "velocity",
-//       self.getVelocity()
-//     );
-//   },
-// });
