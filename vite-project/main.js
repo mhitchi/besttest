@@ -32,7 +32,8 @@ function transform(section) {
   
   //move horizontally depending on vertical scroll depth
   scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
-  scrollSection.style.webkitTransform = `-webkit-translate3d(${-(percentage)}vw, 0, 0); `
+  // // troubleshooting safari
+  // scrollSection.style.webkitTransform = `-webkit-translate3d(${-(percentage)}vw, 0, 0); `
   
 
   // //change svg color
@@ -65,7 +66,12 @@ function transform(section) {
 //spin faster if scrolling
 window.addEventListener('scroll', (e) => {
   document.querySelector(".cube-spinner").style.animationName = "spincube"
-  // console.log("scrolling")
+  const wheelArr = [...document.querySelectorAll(".wheel-child")];
+  wheelArr.forEach(item => {
+    item.style.animationName = "wheel"
+    //animationname applied and consolelogging
+  })
+  
 
 })
 

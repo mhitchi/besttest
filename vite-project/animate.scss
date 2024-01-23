@@ -222,6 +222,45 @@ animation-delay: calc(var(--scroll) * 0.5s);
 
 
 /* start wheel */
+.wheel {
+  scroll-timeline-name: scroll()
+}
+.wheel-child {
+  //  animation-name: wheel;
+  // animation-duration: 12s;
+  // animation-iteration-count: 1;
+  animation-delay: calc(var(--scroll) * 0.5s);
+  //animation-timing-function: ease-out;
+  // animation-iteration-count: 1;
+  // // animation duration needed for firefox and safari
+   //animation-duration: 12s;
+  animation-direction: alternate;
+  // testing scroll timeline
+  animation-timeline: scroll();
+}
+// rotatecounterclockwise
+// translate up y axis
 
+@keyframes wheel {
+  from,
+  to {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-100px) rotate(-30deg);
+  }
+  40% {
+    transform: translateY(-200px) rotate(-60deg);
+  }
+  60% {
+    transform: translateY(-300px) rotate(-80deg);
+  }
+  80% {
+    transform: translateY(-400px) rotate(-100deg);
+  }
+  100% {
+    transform: translateY(-600px) rotate(-120deg);
+  }
+}
 
 /* end wheel */
