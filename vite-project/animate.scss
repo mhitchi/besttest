@@ -223,20 +223,31 @@ animation-delay: calc(var(--scroll) * 0.5s);
 
 /* start wheel */
 .wheel {
-  scroll-timeline-name: scroll()
+  // position: relative;
+  // scroll-timeline-name: scroll()
 }
 .wheel-child {
-  //  animation-name: wheel;
-  // animation-duration: 12s;
-  // animation-iteration-count: 1;
-  animation-delay: calc(var(--scroll) * 0.5s);
-  //animation-timing-function: ease-out;
-  // animation-iteration-count: 1;
-  // // animation duration needed for firefox and safari
-   //animation-duration: 12s;
-  animation-direction: alternate;
-  // testing scroll timeline
-  animation-timeline: scroll();
+  position: relative;
+  margin-bottom: 100px;
+  // animation-delay: calc(var(--scroll) * 0.5s);
+  // animation-direction: alternate;
+  // // testing scroll timeline
+  // animation-timeline: scroll();
+}
+.wheel-child.first {
+  transform: rotate(0deg)
+}
+.wheel-child.second {
+  transform: rotate(5deg)
+}
+.wheel-child.third {
+  transform: rotate(10deg)
+}
+.wheel-child.fourth {
+  transform: rotate(15deg)
+}
+.wheel-child.fifth {
+  transform: rotate(20deg)
 }
 // rotatecounterclockwise
 // translate up y axis
@@ -247,16 +258,16 @@ animation-delay: calc(var(--scroll) * 0.5s);
     transform: translateY(0px) rotate(0deg);
   }
   20% {
-    transform: translateY(-100px) rotate(-30deg);
+    transform: translateY(-100px) rotate(-15deg);
   }
   40% {
-    transform: translateY(-200px) rotate(-60deg);
+    transform: translateY(-200px) rotate(-30deg);
   }
   60% {
-    transform: translateY(-300px) rotate(-80deg);
+    transform: translateY(-300px) rotate(-45deg);
   }
   80% {
-    transform: translateY(-400px) rotate(-100deg);
+    transform: translateY(-400px) rotate(-60deg);
   }
   100% {
     transform: translateY(-600px) rotate(-120deg);

@@ -84,3 +84,26 @@ for (let i = 0; i< colorTxt.length; i++) {
   colorTxt[i].style.color = rand
 }
 
+
+//trying to simplify scrolltrigger
+gsap.set('.wheel-child', { position: 'absolute' });
+
+
+gsap.to('.wheel-child', {
+  yPercent: -10,
+  rotation: "-=40_ccw",
+  opacity: 0,
+  transformOrigin: "0% 100%",
+  stagger: 0.25,
+  scrollTrigger: {
+    
+    trigger: '.wheel-child',
+    // threshold: 0.5, // target 'section' should be 20% visible,
+    
+    markers: true,
+    scrub: true,
+    start: window.innerHeight,
+    end: "+=800px",
+    pin: true,
+  }
+})
