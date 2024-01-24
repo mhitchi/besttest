@@ -31,7 +31,15 @@ function transform(section) {
   console.log(percentage)
   
   //move horizontally depending on vertical scroll depth
+  let wheelTime = false;
+
+  // if (percentage==187) {
+  //   wheelTime = true
+  // } else if (percentage !== 187) {
+  //   scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+  // }
   scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+  
   // // troubleshooting safari
   // scrollSection.style.webkitTransform = `-webkit-translate3d(${-(percentage)}vw, 0, 0); `
   
@@ -85,25 +93,52 @@ for (let i = 0; i< colorTxt.length; i++) {
 }
 
 
+// //trying to simplify scrolltrigger
+// gsap.set('.wheel', { position: 'absolute' });
+
+
+// gsap.to('.wheel', {
+//   yPercent: 50,
+//   rotation: "-=40_ccw",
+//   opacity: 0,
+//   transformOrigin: "0% 100%",
+//   stagger: 0.25,
+//   scrollTrigger: {
+    
+//     trigger: '.wheel-child',
+//     // threshold: 0.5, // target 'section' should be 20% visible,
+    
+//     markers: true,
+//     scrub: true,
+//     start: window.innerHeight,
+//     end: "+=800px",
+//     pin: true,
+//   }
+// })
+
 //trying to simplify scrolltrigger
-gsap.set('.wheel-child', { position: 'absolute' });
+
+// gsap.set('.wheel', { position: 'absolute' });
 
 
-gsap.to('.wheel-child', {
-  yPercent: -10,
+gsap.to('.wheel', {
+  // y: window.innerHeight/4,
+  // x: window.innerWidth/5,
   rotation: "-=40_ccw",
-  opacity: 0,
+  // top: window.innerHeight/2,
+  // left: window.innerWidth*2.3,
+  opacity: 1,
   transformOrigin: "0% 100%",
-  stagger: 0.25,
+  // stagger: .75,
   scrollTrigger: {
     
-    trigger: '.wheel-child',
+    trigger: '.wheel',
     // threshold: 0.5, // target 'section' should be 20% visible,
     
     markers: true,
     scrub: true,
-    start: window.innerHeight,
-    end: "+=800px",
+    start: window.innerHeight*1.25,
+    end: "+=1200px",
     pin: true,
   }
 })
