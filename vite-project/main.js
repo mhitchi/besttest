@@ -121,24 +121,40 @@ for (let i = 0; i< colorTxt.length; i++) {
 // gsap.set('.wheel', { position: 'absolute' });
 
 
-gsap.to('.wheel', {
-  // y: window.innerHeight/4,
-  // x: window.innerWidth/5,
-  rotation: "-=40_ccw",
-  // top: window.innerHeight/2,
-  // left: window.innerWidth*2.3,
-  opacity: 1,
-  transformOrigin: "0% 100%",
-  // stagger: .75,
+// gsap.to('.wheel', {
+//   // y: window.innerHeight/4,
+//   // x: window.innerWidth/5,
+//   // rotation: "-=40_ccw",
+//   scale: 1.5,
+//   // top: window.innerHeight/2,
+//   // left: window.innerWidth*2.3,
+//   opacity: 1,
+//   // transformOrigin: "0% 100%",
+//   // stagger: .75,
+//   scrollTrigger: {
+    
+//     trigger: '.wheel',
+//     // threshold: 0.5, // target 'section' should be 20% visible,
+    
+//     markers: true,
+//     scrub: true,
+//     start: window.innerHeight*1.25,
+//     end: "+=1200px",
+//     pin: true,
+//   }
+// })
+
+gsap.set('.wheel-child', { position: 'absolute' });
+
+gsap.to('.wheel-child', {
+  yPercent: -10,
+  stagger: 0.5,
   scrollTrigger: {
-    
-    trigger: '.wheel',
-    // threshold: 0.5, // target 'section' should be 20% visible,
-    
+    trigger: '.wheel-child',
     markers: true,
-    scrub: true,
     start: window.innerHeight*1.25,
-    end: "+=1200px",
-    pin: true,
+    end: "+=600px",
+    scrub: true,
+    pin: true
   }
 })
