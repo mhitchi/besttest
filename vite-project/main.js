@@ -103,5 +103,16 @@ for (let i = 0; i< colorTxt.length; i++) {
   colorTxt[i].style.color = rand
 }
 
+//place images randomly on page within legible areas
+//get array of image elements
+const productImgArr = [...document.querySelectorAll(".product")]
 
+//get array of src files
+const imgFilesArr = ["./assets/img/AnotherChairSketch02.png", "./assets/img/BeamChair.png", "./assets/img/BeamChairSketch.png", "./assets/img/CardboardChair.png", "./assets/img/CHA3R.png", "./assets/img/CHA1R.png", "./assets/img/CHA4R.png", "./assets/img/CHA5R.png", "./assets/img/foldingChairIcon.png", "./assets/img/greenSpinCube.png", "./assets/img/StoolSketch.png", "./assets/img/MODE1.png"]
 
+//for each image, apply random src
+//for each image, apply random coordinates
+
+productImgArr.forEach(img => {
+ img.src = `${imgFilesArr[(Math.floor(Math.random() * imgFilesArr.length))]}`
+})

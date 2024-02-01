@@ -228,7 +228,21 @@ animation-delay: calc(var(--scroll) * 0.5s);
   // scroll-timeline-name: scroll()
   width: 100vw;
   // top: 30%;
-   left: 55%;
+}
+@media (min-width: 768px) and (max-width: 1008px) {
+  .wheel {
+     left: 53.5%;
+  }
+}
+@media (min-width: 1009px) and (max-width: 1599px) {
+  .wheel {
+     left: 52.5%;
+  }
+}
+@media (min-width: 1600px) {
+  .wheel {
+     left: 51.5%;
+  }
 }
 
 .hidden {
