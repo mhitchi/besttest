@@ -108,11 +108,33 @@ for (let i = 0; i< colorTxt.length; i++) {
 const productImgArr = [...document.querySelectorAll(".product")]
 
 //get array of src files
-const imgFilesArr = ["./assets/img/AnotherChairSketch02.png", "./assets/img/BeamChair.png", "./assets/img/BeamChairSketch.png", "./assets/img/CardboardChair.png", "./assets/img/CHA3R.png", "./assets/img/CHA1R.png", "./assets/img/CHA4R.png", "./assets/img/CHA5R.png", "./assets/img/foldingChairIcon.png", "./assets/img/greenSpinCube.png", "./assets/img/StoolSketch.png", "./assets/img/MODE1.png"]
+const imgFilesArr = ["./assets/img/AnotherChairSketch02.png", "./assets/img/BeamChair.png", "./assets/img/BeamChairSketch.png", "./assets/img/CardboardChair.png", "./assets/img/CHA3R.png", "./assets/img/CHA1R.png", "./assets/img/CHA4R.png", "./assets/img/CHA5R.png", "./assets/img/foldingChairIcon.png", "./assets/img/greenSpinCube.png", "./assets/img/StoolSketch.png", "./assets/img/MODE1.png", "./assets/img/Scan 2 copy.png", "./assets/img/chairIcon.png", "./assets/img/foldingChairIcon.png", "./assets/img/coffeeIcon.png"]
+
+
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+shuffle(imgFilesArr);
 
 //for each image, apply random src
 //for each image, apply random coordinates
 
-productImgArr.forEach(img => {
- img.src = `${imgFilesArr[(Math.floor(Math.random() * imgFilesArr.length))]}`
-})
+for ( let i = 0; i < productImgArr.length; i++ ) {
+    productImgArr[i].src= imgFilesArr[i]
+}
