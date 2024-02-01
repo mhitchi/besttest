@@ -7,6 +7,23 @@ import * as THREE from "three";
 
 gsap.registerPlugin(ScrollTrigger);
 
+//simplified scrolltrigger
+
+gsap.set('.wheel-child', { position: 'absolute' });
+
+gsap.to('.wheel-child', {
+  yPercent: -10,
+  stagger: 0.5,
+  scrollTrigger: {
+    trigger: '.wheel-child',
+    markers: true,
+    start: window.innerHeight*1.25,
+    end: "+=600px",
+    scrub: true,
+    pin: true
+  }
+})
+
 const stickySections = [...document.querySelectorAll('.sticky_wrap')]
 const scrollContents = [...document.querySelectorAll('.scroll_contents')]
 
@@ -28,17 +45,11 @@ function transform(section) {
 
   percentage = percentage < 0 ? 0 : percentage > 300 ? 300 : percentage;
   // note: 130-210 = scenario/orange
-  console.log(percentage)
+  // console.log(percentage)
   
   //move horizontally depending on vertical scroll depth
-  let wheelTime = false;
-
-  // if (percentage==187) {
-  //   wheelTime = true
-  // } else if (percentage !== 187) {
-  //   scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
-  // }
-  scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+  //  scrollSection.style.overflow = 'auto'
+  scrollSection.style.transform = `translateX(${-(percentage)}vw)`
   
   // // troubleshooting safari
   // scrollSection.style.webkitTransform = `-webkit-translate3d(${-(percentage)}vw, 0, 0); `
@@ -74,11 +85,11 @@ function transform(section) {
 //spin faster if scrolling
 window.addEventListener('scroll', (e) => {
   document.querySelector(".cube-spinner").style.animationName = "spincube"
-  const wheelArr = [...document.querySelectorAll(".wheel-child")];
-  wheelArr.forEach(item => {
-    item.style.animationName = "wheel"
-    //animationname applied and consolelogging
-  })
+  // const wheelArr = [...document.querySelectorAll(".wheel-child")];
+  // wheelArr.forEach(item => {
+  //   item.style.animationName = "wheel"
+  //   //animationname applied and consolelogging
+  // })
   
 
 })
@@ -93,68 +104,4 @@ for (let i = 0; i< colorTxt.length; i++) {
 }
 
 
-// //trying to simplify scrolltrigger
-// gsap.set('.wheel', { position: 'absolute' });
 
-
-// gsap.to('.wheel', {
-//   yPercent: 50,
-//   rotation: "-=40_ccw",
-//   opacity: 0,
-//   transformOrigin: "0% 100%",
-//   stagger: 0.25,
-//   scrollTrigger: {
-    
-//     trigger: '.wheel-child',
-//     // threshold: 0.5, // target 'section' should be 20% visible,
-    
-//     markers: true,
-//     scrub: true,
-//     start: window.innerHeight,
-//     end: "+=800px",
-//     pin: true,
-//   }
-// })
-
-//trying to simplify scrolltrigger
-
-// gsap.set('.wheel', { position: 'absolute' });
-
-
-// gsap.to('.wheel', {
-//   // y: window.innerHeight/4,
-//   // x: window.innerWidth/5,
-//   // rotation: "-=40_ccw",
-//   scale: 1.5,
-//   // top: window.innerHeight/2,
-//   // left: window.innerWidth*2.3,
-//   opacity: 1,
-//   // transformOrigin: "0% 100%",
-//   // stagger: .75,
-//   scrollTrigger: {
-    
-//     trigger: '.wheel',
-//     // threshold: 0.5, // target 'section' should be 20% visible,
-    
-//     markers: true,
-//     scrub: true,
-//     start: window.innerHeight*1.25,
-//     end: "+=1200px",
-//     pin: true,
-//   }
-// })
-
-gsap.set('.wheel-child', { position: 'absolute' });
-
-gsap.to('.wheel-child', {
-  yPercent: -10,
-  stagger: 0.5,
-  scrollTrigger: {
-    trigger: '.wheel-child',
-    markers: true,
-    start: window.innerHeight*1.25,
-    end: "+=600px",
-    scrub: true,
-    pin: true
-  }
-})
