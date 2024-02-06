@@ -7,6 +7,36 @@ import * as THREE from "three";
 
 gsap.registerPlugin(ScrollTrigger);
 
+//hybrid scroll
+const scrollContents = document.querySelector(".scroll_contents");
+console.log("offset width: " + scrollContents.offsetWidth)
+
+function getScrollAmount() {
+	let scrollContentsWidth = scrollContents.scrollWidth;
+  console.log("scroll contents width: " + scrollContentsWidth)
+  console.log(-(scrollContentsWidth - window.innerWidth))
+	return -(scrollContentsWidth - window.innerWidth);
+}
+
+const tween = gsap.to(scrollContents, {
+	x: getScrollAmount,
+	duration: 3,
+	ease: "none",
+});
+
+
+ScrollTrigger.create({
+	trigger:".scroll_wrapper",
+	start:"top 0%",
+	end: () => `+=${getScrollAmount() * -1}`,
+	pin:true,
+	animation:tween,
+	scrub:1,
+	invalidateOnRefresh:true,
+	markers:true
+})
+//end hybrid scroll
+
 //simplified scrolltrigger
 
 gsap.set('.wheel-child', { position: 'absolute' });
@@ -25,7 +55,7 @@ gsap.to('.wheel-child', {
 })
 
 const stickySections = [...document.querySelectorAll('.sticky_wrap')]
-const scrollContents = [...document.querySelectorAll('.scroll_contents')]
+// const scrollContents = [...document.querySelectorAll('.scroll_contents')]
 
 
 window.addEventListener('scroll', (e) => {
@@ -39,22 +69,18 @@ function transform(section) {
 
   const offsetTop = section.parentElement.offsetTop;
 
-  const scrollSection = section.querySelector('.horizontal_scroll')
+ // const scrollSection = section.querySelector('.horizontal_scroll')
 
   let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
 
   percentage = percentage < 0 ? 0 : percentage > 300 ? 300 : percentage;
   // note: 130-210 = scenario/orange
-  // console.log(percentage)
   
   //move horizontally depending on vertical scroll depth
-  //  scrollSection.style.overflow = 'auto'
-  scrollSection.style.transform = `translateX(${-(percentage)}vw)`
+  //scrollSection.style.transform = `translateX(${-(percentage)}vw)`
   
   // // troubleshooting safari
-  // scrollSection.style.webkitTransform = `-webkit-translate3d(${-(percentage)}vw, 0, 0); `
   
-
   // //change svg color
   document.querySelectorAll(".icon").forEach (svg => {
 
